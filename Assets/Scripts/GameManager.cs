@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int pompas_existentes = 0;
-    public UIManager UIManager;
     public static GameManager Instance { get; private set; }
 
     void Awake()

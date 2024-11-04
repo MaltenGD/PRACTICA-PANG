@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5410615023091993386}
   - component: {fileID: 2057214482613306889}
   - component: {fileID: 551892527995691181}
-  - component: {fileID: 2336217446535131339}
   - component: {fileID: 5752937661713201752}
+  - component: {fileID: 2895668042392330165}
   m_Layer: 6
   m_Name: Pompa
   m_TagString: Pompa
@@ -150,23 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2336217446535131339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4630221758520910609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbcaaf96263df34095ddb2d54642761, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pompa: {fileID: 4630221758520910609}
-  GameManager: {fileID: 0}
-  impulso_pompa: 2
-  "tama\xF1o": 2
-  pompas_existentes: 1
 --- !u!114 &5752937661713201752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +162,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f531b4adbb42d468c67af6eb324bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+--- !u!114 &2895668042392330165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630221758520910609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc551621a6f5094282b9d4bfa8f797b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulso_pompa: 2
+  size: 2
+  Pompa: {fileID: 4630221758520910609}
+  rb: {fileID: 0}

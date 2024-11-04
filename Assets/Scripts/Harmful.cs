@@ -13,11 +13,11 @@ public class Harmful : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)  // Termina el juego si una pompa toca al jugador 
+    private void OnCollisionEnter2D(Collision2D collision)  // Termina el juego si una pompa toca al jugador 
     {
-        if (collision.GetComponent<Health>() != null)
+        if (collision.gameObject.GetComponent<Health>() != null)
         {
-            GameManager.Instance.OnPlayerDamaged(collision.gameObject);
+            collision.gameObject.GetComponent<Health>().Harm();
             Destroy(gameObject);
         }
     }
