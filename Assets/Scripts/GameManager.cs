@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int pompas_existentes = 0;
+
     public static GameManager Instance { get; private set; }
 
     void Awake()
@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
-
     void Update()
     {
 
@@ -40,15 +38,9 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.Inform("Has Perdido");
         
     }
-    public void OnBubbleCreated() 
-    {
-        pompas_existentes++;
-        
-    }
-    public void OnBubbleDamaged()
-    {
-        pompas_existentes--;
-        // Evito que salte el texto de victoria antes de tiempo
+
+    public void PompaAnalizer(int pompas_existentes)
+    { 
         if (pompas_existentes == 0)
         {
             UIManager.Instance.Inform("Has ganado!");

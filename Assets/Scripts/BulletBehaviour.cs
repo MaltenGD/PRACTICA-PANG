@@ -39,7 +39,6 @@ public class BulletBehaviour : MonoBehaviour
             BlowupScript = collision.gameObject.GetComponent<Blowup>();
             BlowupScript.Burst();
             Destroy(gameObject);
-
         }
 
 
