@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -39,9 +40,16 @@ public class GameManager : MonoBehaviour
         
     }
 
+<<<<<<< Updated upstream
     public void PompaAnalizer(int pompas_existentes)
     { 
         if (pompas_existentes == 0)
+=======
+    public void PompaAnalizer(int cantidad)
+    {
+
+        if (cantidad == 0)
+>>>>>>> Stashed changes
         {
             UIManager.Instance.Inform("Has ganado!");
         }

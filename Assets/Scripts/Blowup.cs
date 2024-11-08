@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class Blowup : MonoBehaviour
 {
-    public float impulso_inicial = 2f;
-    public float impulso_division = 3f;
-    public Vector3 initial_size = new Vector3(1.5f, 1.5f, 1.5f);
+    public float impulso_pompa = 2f;
+    public float impulso_division = 30f;
     public Vector3 destroy_size = new Vector3(0.5f,0.5f,0.5f);
     public GameObject Pompa;
     public float division_ratio = 2f;
@@ -17,7 +16,7 @@ public class Blowup : MonoBehaviour
     void Start()
     {
        GameManager.Instance.OnBubbleCreated();
-=======
+       gameObject.GetComponent<Rigidbody2D>().velocity += new Vector2(impulso_pompa, impulso_pompa);
 
 
     void Start()
@@ -36,28 +35,20 @@ public class Blowup : MonoBehaviour
 
     }
 
+    void PompaCounter()
+    {
+        var Pompas_existentes = GameObject.FindObjectsOfType<Blowup>();
+        GameManager.Instance.PompaAnalizer(Pompas_existentes.Length);
+    }
+
     public void Burst()
     {
-
-        if ((gameObject.transform.localScale.magnitude / division_ratio) > destroy_size.magnitude) // compruebo si las divisiones de la pompa son superiores al tamaño de destrucción
+        if (gameObject.transform.localScale.magnitude > destroy_size.magnitude)
         {
             PompaSplit();
 
         }
         Destroy(gameObject);
-        PompaCounting();
-        
-        
-
-    }
-
-     void Init(int tamaño, int fuerza)
-     { 
-        //No sé que hay que hacer con este metodo
-    
-     }
-<<<<<<< Updated upstream
-=======
 
      void PompaCounting()
     {
@@ -77,7 +68,7 @@ public class Blowup : MonoBehaviour
         Pompa2.GetComponent<Rigidbody2D>().velocity = new Vector2(impulso_division, impulso_division);
         Debug.Log("impulso de división efectuado");
 
-        
+
 
 
     }
