@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,20 +41,21 @@ public class GameManager : MonoBehaviour
         
     }
 
-<<<<<<< Updated upstream
-    public void PompaAnalizer(int pompas_existentes)
-    { 
-        if (pompas_existentes == 0)
-=======
+
+
     public void PompaAnalizer(int cantidad)
     {
 
         if (cantidad == 0)
->>>>>>> Stashed changes
+
         {
             UIManager.Instance.Inform("Has ganado!");
         }
 
+    }
+    public void GameStarter()
+    {
+        SceneManager.LoadScene("Juego");
     }
 
 }
