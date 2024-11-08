@@ -11,7 +11,6 @@ public class Harmful : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     private void OnCollisionEnter2D(Collision2D collision)  // Termina el juego si una pompa toca al jugador 
     {
