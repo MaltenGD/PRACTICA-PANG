@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,11 +34,12 @@ public class GameManager : MonoBehaviour
         vida -= daño;
         Debug.Log(vida);
     } */
-    public void OnPlayerDamaged(GameObject jugador)
+    public void OnPlayerFail(GameObject jugador)
     {
         Destroy(jugador);
         Debug.Log("Intentando hacer print de derrota");
         UIManager.Instance.Inform("Has Perdido");
+
         
     }
 
@@ -57,5 +59,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Juego");
     }
+    public void Derrota()
+    {
 
+    }
 }
