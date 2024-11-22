@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -12,10 +13,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public Timer TimerScript;
     public string ActualScene;
+    public int newbest = 0;
+
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -24,11 +27,12 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        DontDestroyOnLoad(gameObject);
 
     }
     void Start()
     {
-        TimerScript = gameObject.GetComponent<Timer>();
+        FetchTimerScript();
     }
     void Update()
     {
@@ -37,7 +41,7 @@ public class GameManager : MonoBehaviour
     public void PompaAnalizer()
     {
         var Pompas_existentes = GameObject.FindObjectsOfType<Blowup>();
-        Debug.Log($"Pompas existentes: {Pompas_existentes.Length - 1}");
+        Debug.Log($"Pompas existentes: {Pompas_existentes.Length - 1}"); // no se por que cuenta 1 posicion de más en el length
         if (Pompas_existentes.Length - 1 == 0)
 
         {
@@ -64,9 +68,22 @@ public class GameManager : MonoBehaviour
     public void OnVictory()
     {
         TimerScript.TimerState(false);
+        TimerScript.SendScoreToGM();
         UIManager.Instance.EndInform("Has ganado!");
         ButtonLogic.Instance.MenuButtonState(true);
     }
 
+    public void FetchTimerScript()
+    {
+        TimerScript = gameObject.GetComponent<Timer>();
+    }
+    public void storeNewBest(float[] timerscore)
+    {
+        int Scoresecs = Convert.ToInt32(timerscore[0] + (timerscore[1] * 60));
+        if (newbest > Scoresecs || newbest == 0)
+        {
+            newbest = Scoresecs;
+        }
+    }
 
 }

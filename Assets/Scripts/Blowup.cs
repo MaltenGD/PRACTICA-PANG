@@ -8,15 +8,17 @@ public class Blowup : MonoBehaviour
 {
     public float impulso_inicial = 2f;
     public float impulso_division = 3f;
-    public Vector3 initial_size = new Vector3(1.5f, 1.5f, 1.5f);
+    public Vector3 initial_size = new Vector3(3.50f, 4.20f, 3.50f);
     public Vector3 destroy_size = new Vector3(0.5f,0.5f,0.5f);
     public GameObject Pompa;
     public float division_ratio = 2f;
 
     void Start()
     {
+        Debug.Log(gameObject.transform.localScale);
        if (gameObject.transform.localScale == initial_size) // aplica un impulso a las pompas iniciales
         {
+
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(impulso_inicial, impulso_inicial);
         }
 

@@ -692,6 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texto: {fileID: 306923124}
   TimerText: {fileID: 1295534383}
+  Record: {fileID: 0}
 --- !u!1 &840980827
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +849,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8395703
       objectReference: {fileID: 0}
@@ -904,6 +917,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2896285789267183529, guid: f9ae8eea32f558140beb4f8dc1a055fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6533532

@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     Text texto;
     [SerializeField]
     Text TimerText;
+    [SerializeField]
+    Text Record;
+
 
     public static UIManager Instance { get; private set; }
 
@@ -26,6 +29,13 @@ public class UIManager : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        int record = GameManager.Instance.newbest;
+        if (record != 0)
+        Record.text = $"Record de tiempo: {record} segundos";
+        else Record.text = $"Record de tiempo: No existe record registrado";
+    }
 
     void Update()
     {
@@ -41,5 +51,6 @@ public class UIManager : MonoBehaviour
     {
         TimerText.text = timer[1] + ":" + Math.Round(timer[0]);
     }
+
 
 }
