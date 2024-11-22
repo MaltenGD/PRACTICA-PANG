@@ -28,11 +28,6 @@ public class Blowup : MonoBehaviour
 
     }
 
-    void PompaCounter()
-    {
-        var Pompas_existentes = GameObject.FindObjectsOfType<Blowup>();
-        GameManager.Instance.PompaAnalizer(Pompas_existentes.Length);
-    }
 
     public void Burst()
         {
@@ -42,7 +37,7 @@ public class Blowup : MonoBehaviour
 
             }
             Destroy(gameObject);
-            PompaCounter();
+            GameManager.Instance.PompaAnalizer();
         }
 
 
@@ -57,8 +52,6 @@ public class Blowup : MonoBehaviour
         Pompa1.GetComponent<Rigidbody2D>().velocity = new Vector2(-impulso_division, impulso_division); // Aplica un impulso a las pompas divididas
         Pompa2.GetComponent<Rigidbody2D>().velocity = new Vector2(impulso_division, impulso_division);
         Debug.Log("impulso de división efectuado");
-
-        PompaCounter();
 
 
 

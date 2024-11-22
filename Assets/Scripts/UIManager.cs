@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] 
-    TextMeshProUGUI texto;
+    [SerializeField]
+    Text texto;
+    [SerializeField]
+    Text TimerText;
+
     public static UIManager Instance { get; private set; }
 
     void Awake()
@@ -28,10 +32,14 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void Inform(string mensage)
+    public void EndInform(string mensage)
     {
         texto.text = mensage;
     
+    }
+    public void TimerDisplay(float[] timer)
+    {
+        TimerText.text = timer[1] + ":" + Math.Round(timer[0]);
     }
 
 }

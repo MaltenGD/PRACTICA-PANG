@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.84, y: 0.17, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3.5, y: 4.2, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b61958bb0475b4546a535df7b9775b14, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: -1838302359
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.87169814, g: 0, b: 0.11514477, a: 1}
+  m_Sprite: {fileID: -2012871814, guid: 56f9b3fb703fd7d42a1a9998d25b0ce2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.23
 --- !u!50 &551892527995691181
 Rigidbody2D:
   serializedVersion: 4
@@ -174,7 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc551621a6f5094282b9d4bfa8f797b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulso_pompa: 2
-  size: 2
+  impulso_inicial: 2
+  impulso_division: 3
+  initial_size: {x: 1.5, y: 1.5, z: 1.5}
+  destroy_size: {x: 0.5, y: 0.5, z: 0.5}
   Pompa: {fileID: 4630221758520910609}
-  rb: {fileID: 0}
+  division_ratio: 2
